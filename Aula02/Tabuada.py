@@ -17,4 +17,9 @@ multiplicador = int(input('Escolha um número de 1 a 10:'))
 for i in range(11):
     resultado = i * multiplicador
     #print(' {} * {} = {}' . format(multiplicador, i, resultado))
-    print(f' {multiplicador} * {i} = {resultado}')
+    print(f' {multiplicador} * {i:>2} = {resultado:>3}')
+
+
+
+
+
