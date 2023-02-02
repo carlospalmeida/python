@@ -24,3 +24,23 @@ class importacao:
         listaCategoria["Dados"] = dadosCategoria
         return (listaCategoria)
         #print(contador)
+
+    def impProdutos(self):
+            import os
+            arquivo2 = os.path.dirname(os.path.realpath(__file__)) + '\\BaseDados\\produtos.csv'
+            categoria2 = open(arquivo2, 'r',encoding='utf = 8')
+            listaCategoria2 = {}
+            contador2 = 0
+            listaCategoria2["Tabela"] = "Categoria"
+            listaCategoria2["Dados"] = ""
+            dadosCategoria2 = {}
+            for linhas2 in categoria2:
+                colunas2 = linhas2.strip().split(';')
+                contador2 += 1
+                dadosCategoria2 [colunas2[0]] = {'nome': colunas2[1], 'Categoria' : colunas2[2],'Unidade':colunas2[3],
+                'Estoque':colunas2[4],'Quantidade Pedida':colunas2[5],'Nivel de Estoque':colunas2[6],'Descontinuado':colunas2[7],
+                'Valor de venda':colunas2[8],'Valor de custo':colunas2[9]}
+            listaCategoria2["Dados"] = dadosCategoria2
+            listaCategoria2["Total"] = contador2
+            return(listaCategoria2)
+            
