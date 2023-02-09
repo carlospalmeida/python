@@ -2,10 +2,19 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from time import sleep
-from os import system, name
+from os import system, path ,name
 from getpass import getpass
+import logging #Blibioteca para criar arquivo log(historico) de eventos 
+from datetime import datetime 
+
 
 system('cls') if(name == "nt") else system('clear')
+pasta = path.dirname(path.realpath(__file__))
+#Criar Arquivo LOG
+hoje = (datetime.now()).strftime('%Y-%m-%d_%H%M%S')
+logging.basicConfig(filename=f'log/log{hoje}.log',level=logging.DEBUG,
+format='%(asctime)s %(levelname)s %(funcName)s => %(message)s')
+
 
 #Função Clicar
 def clicar(xpath):
